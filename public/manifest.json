@@ -1,0 +1,13 @@
+{
+	"name": "Serve",
+	"short_name": "Serve",
+	"icons": [
+		{
+			"src": "images/google-touch-icon.png",
+			"sizes": "512x512"
+		}
+	],
+	"background_color": "#ffffff",
+	"theme_color": "#ffffff",
+	"display": "fullscreen"
+}
