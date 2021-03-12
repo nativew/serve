@@ -74,7 +74,9 @@ serve.update();
 
 ### Use any file watcher
 
-Example with [Chokidar](https://github.com/paulmillr/chokidar)
+<br>
+
+[Chokidar](https://github.com/paulmillr/chokidar)
 
 ```js
 import serve from 'create-serve';
@@ -87,6 +89,12 @@ chokidar.watch('.').on('change', () => {
 });
 ```
 
+<br>
+
+[esbuild](https://esbuild.github.io/api/#watch)
+
+Use the official wrapper for esbuild's watch &nbsp; → &nbsp; [esbuild-serve](https://github.com/nativew/esbuild-serve)
+
 <br><br>
 
 <p>
@@ -95,4 +103,4 @@ chokidar.watch('.').on('change', () => {
     </a>
 </p>
 
-<br>
+<div></div>
