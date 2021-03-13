@@ -4,8 +4,10 @@ import path from 'path';
 import listen from './listen.js';
 import {
 	addClient,
+	error,
 	getFilePath,
 	injectContent,
+	log,
 	mimeType,
 	setRoot,
 	show404,
@@ -65,4 +67,5 @@ export const update = () => {
 	clients.length = 0;
 };
 
+export { error, log };
 export default { start, update };

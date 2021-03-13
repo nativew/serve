@@ -95,6 +95,22 @@ chokidar.watch('.').on('change', () => {
 
 Use the official wrapper for esbuild's watch &nbsp; → &nbsp; [esbuild-serve](https://github.com/nativew/esbuild-serve)
 
+<br>
+
+### Log
+
+Import the util functions to log updates with colours.
+
+```js
+import serve, { error, log } from 'create-serve';
+
+serve.update();
+
+hasError
+    ? error('× Failed') // Red
+    : log('✓ Updated'); // Green
+```
+
 <br><br>
 
 <p>
