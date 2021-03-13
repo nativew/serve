@@ -13,7 +13,7 @@
 	},
 	"scripts": {
 		"format": "prettier --write --ignore-unknown '**/*'",
-		"start": "node src/bin.js"
+		"start": "node src/bin.js test"
 	},
 	"devDependencies": {
 		"prettier": "^2.2.1"
