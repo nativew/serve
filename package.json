@@ -1,6 +1,6 @@
 {
 	"name": "create-serve",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "🍛 Ultralight http server with live reload. [CLI + API]",
 	"repository": "nativew/serve",
 	"author": "Antoine Boulanger (https://github.com/antoineboulanger)",
