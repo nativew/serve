@@ -1,16 +1,18 @@
-import fs from 'fs';
-import { options } from '../index.js';
+import fs from 'fs'
+import url from 'url'
+import { options } from '../index.js'
 
 export const getFilePath = request => {
-	const { root } = options;
+	const { root } = options
 
-	if (request.url == '/') return `${root}/index.html`;
+	if (url.parse(request.url).search) return `${root}/index.html`
+	if (request.url == '/') return `${root}/index.html`
 
 	if (!request.url.includes('.')) {
-		const testFilepath = `${root}/${request.url}.html`;
+		const testFilepath = `${root}/${request.url}.html`
 
-		if (fs.existsSync(testFilepath)) return testFilepath;
+		if (fs.existsSync(testFilepath)) return testFilepath
 	}
 
-	return root + request.url;
-};
+	return root + request.url
+}
