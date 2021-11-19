@@ -2,9 +2,13 @@ import fs from 'fs';
 import { options } from '../index.js';
 
 export const getFilePath = request => {
-	const { root } = options;
+	const { root, fallback } = options;
 
 	if (request.url == '/') return `${root}/index.html`;
+
+	if (fallback && !fs.existsSync(`${root}${request.url}`) && !request.url.endsWith('/')) {
+		return `${root}/${fallback}`;
+	}
 
 	if (!request.url.includes('.')) {
 		const testFilepath = `${root}/${request.url}.html`;
