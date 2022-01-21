@@ -13,6 +13,8 @@ Ultralight http server with live reload.
 
 ### Light and modern
 
+### With secure protocol
+
 ### No dependencies
 
 <br>
@@ -58,7 +60,12 @@ import serve from 'create-serve';
 serve.start({
     port: 7000,
     root: '.',
-    live: true
+    live: true,
+    isHttps: true,
+    tlsOptions: {
+      key: 'absolute path to private key',
+      cert: 'absolute path to cert',
+    },
 });
 ```
 
