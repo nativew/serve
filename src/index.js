@@ -1,6 +1,7 @@
-import http from 'http';
 import fs from 'fs';
 import path from 'path';
+import http from 'http';
+import https from 'https';
 import listen from './listen.js';
 import {
 	addClient,
@@ -12,13 +13,16 @@ import {
 	setRoot,
 	show404,
 	showError,
-	showFile
+	showFile,
+	checkTLSOptions
 } from './utils/index.js';
 
 export let options = {
 	port: 7000,
 	root: '.',
-	live: true
+	live: true,
+	isHttps: false,
+	tlsOptions: null
 };
 
 export const defaultRoot = './public';
@@ -30,8 +34,15 @@ export const start = (startOptions = {}) => {
 	Object.assign(options, startOptions);
 	options.root = setRoot();
 
-	const { live } = options;
-	const server = http.createServer((request, response) => {
+	const { live, tlsOptions, isHttps } = options;
+	const tlsConfig = isHttps ? checkTLSOptions(tlsOptions) : undefined;
+	const protocol = {
+		module: tlsConfig ? https : http,
+		alias: tlsConfig ? 'https' : 'http',
+	};
+	options.protocol = protocol.alias;
+
+	const server = protocol.module.createServer(tlsConfig, (request, response) => {
 		if (live && request.url == eventSource) {
 			const client = addClient(response);
 

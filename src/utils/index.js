@@ -10,3 +10,5 @@ export { show404 } from './show404.js';
 export { showError } from './showError.js';
 export { showFile } from './showFile.js';
 export { styles } from './styles.js';
+export * from './fn.js';
+export { checkTLSOptions } from './checkTLSOptions.js';
