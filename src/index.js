@@ -16,6 +16,7 @@ import {
 } from './utils/index.js';
 
 export let options = {
+	host: 'localhost',
 	port: 7000,
 	root: '.',
 	live: true
