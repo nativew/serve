@@ -13,7 +13,9 @@
 	},
 	"scripts": {
 		"format": "prettier --write --ignore-unknown '**/*'",
-		"start": "node src/bin.js test"
+		"start": "node src/bin.js test",
+		"start:port": "node src/bin.js test 3000",
+		"start:host": "node src/bin.js test 3000 0.0.0.0"
 	},
 	"devDependencies": {
 		"prettier": "^2.2.1"
